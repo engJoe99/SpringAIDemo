@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: SpringAIDemo
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: tinyllama
+          temperature: 0.7
+
+    chat:
+      default-system: "You are a senior Spring Boot architect. 
+                      Always explain concepts with concise Java examples. 
+                      Keep responses under 200 words."
+
+      default-options:
+        temperature: 0.3
+        max-tokens: 500
+
+logging:
+  level:
+    org.springframework.ai: DEBUG
+    org.springframework.web.reactive.function.client: DEBUG
+    reactor.netty.http.client: DEBUG
