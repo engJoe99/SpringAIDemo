@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: SpringAIDemo
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: mistral
+        options:
+          temperature: 0.7
+          num-predict: 500  #maximum number of tokens to generate
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always #Auto-create SPRING_AI_CHAT_MEMORY table
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/chatmemory?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
