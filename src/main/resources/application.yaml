@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: SpringAIDemo
+
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: mistral
+        options:
+          temperature: 0.1
+          num-predict: 2000
+
+      embedding:
+        model: nomic-embed-text
+
+    vectorStore:
+      qdrant:
+        host: localhost
+        port: 6334
+        collection-name: rag-documents
+        use-tls: false
+        initialize-schema: true
+
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, info
+
+logging:
+  level:
+    com.boghdady.springaidemo.rag: debug
