@@ -1,0 +1,26 @@
+spring:
+  application:
+      name: SpringAIDemo
+  ai:
+    mcp:
+      server:
+        enabled: true
+        name: weather-countries-mcp-server
+        version: 1.0.0
+        type: sync
+        protocol: streamable
+
+server:
+  port: 8081
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+
+logging:
+  level:
+    com.boghdady: DEBUG
+    org.springframework.ai.mcp: INFO
