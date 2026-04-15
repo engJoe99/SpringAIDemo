@@ -8,7 +8,7 @@ spring:
         name: weather-countries-mcp-server
         version: 1.0.0
         type: sync
-        protocol: streamable
+        protocol: SSE
 
 server:
   port: 8081
