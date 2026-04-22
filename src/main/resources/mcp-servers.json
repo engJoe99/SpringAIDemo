@@ -1,11 +1,9 @@
 {
   "mcpServers": {
-
     "fetch": {
       "command": "python",
       "args": ["-m", "mcp_server_fetch"]
     },
-
     "filesystem": {
       "command": "cmd",
       "args": [
@@ -13,9 +11,8 @@
         "npx",
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "${workspaceFolder}"
+        "D:/Courses/Spring AI/TestProjects/SpringAIDemo"
       ]
     }
   }
-
 }

@@ -14,10 +14,9 @@ spring:
     mcp:
       client:
         enabled: true
-        request-timeout: 15s
-
+        request-timeout: 60s
         stdio:
-          servers-configuration: classpath:mcp-server.json
+          servers-configuration: classpath:/mcp-servers.json
 
         sse:
           connections:
