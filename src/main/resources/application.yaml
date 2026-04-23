@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: SpringAIDemo
+
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: mistral
+          temperature: 0.3
+          num-predict: 2048
+      embedding:
+        model: nomic-embed-text
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, prometheus
+  metrics:
+    tags:
+      application: spring-ai-eval
+
+logging:
+  level:
+    root: info
+    com.boghdady.evaluation: debug
+
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
