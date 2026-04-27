@@ -12,10 +12,10 @@ public class EvaluationConfig {
     // to check if the LLM response is relevant to the user question
     @Bean
     public RelevancyEvaluator relevancyEvaluator(
-            @Qualifier("evaluatorChatClientBuilder") ChatClient.Builder builder) {
+            @Qualifier("evaluatorChatClient") ChatClient chatClient) {
 
         return RelevancyEvaluator.builder()
-                .chatClientBuilder(builder)
+                .chatClientBuilder(chatClient.mutate())
                 .build();
     }
 
